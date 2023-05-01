@@ -4,7 +4,7 @@
 
 let OS;
 let r;
-let steps = 150;
+let steps = 500;
 
 var pos = 0;
 
@@ -27,18 +27,19 @@ function draw() {
   for (let i = 0; i < lineCount; i++) {
     drawBlowIGuess(pos + (i * 1.5),  i * (1 / lineCount));
   }
- 
+
   pos++;
 
 }
 
 
 function drawBlowIGuess(n_pos, opacity){
+  let steps_ = steps * (1 - opacity);
   noFill();
   stroke(opacity * 255)
   beginShape();
-  for (let i = 0; i < steps; i++) {
-    let angle = i * TWO_PI / steps;
+  for (let i = 0; i < steps_; i++) {
+    let angle = i * TWO_PI / steps_;
     
     let noise_x = r * 0.01 * cos(angle);
     let noise_y = r * 0.01 * sin(angle);
