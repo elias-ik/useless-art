@@ -15,7 +15,7 @@ function setup() {
 }
 
 var dict = {};
-let steps = 50;
+let steps = 4;
 let speed = 0.03;
 let scale = 0.03;
 
@@ -47,9 +47,11 @@ function draw() {
   strokeWeight(5);
 
   beginShape();
-  for(var i = 0; i < width; i++){
-    vertex(i, height/2 + dict[i]);
-    console.log(dict[i]);
+  for(var j = 0; j < width; j++){
+    var i = min(height,width) * (j / width) + (width - min(height,width)) / 2
+    console.log(width, height, i);
+    vertex(i, height/2 + dict[j]);
   }
   endShape();
+  // noLoop();
 }
