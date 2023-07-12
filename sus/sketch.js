@@ -4,22 +4,22 @@
 "use strict";
 
 /** @type {OpenSimplexNoise} */
-let osn;
+let osn = new OpenSimplexNoise(Date.now());
 
 var o = 0;
 
 function setup() {
-  osn = new OpenSimplexNoise(Date.now());
   createCanvas(windowWidth,windowHeight);
   frameRate(30);
 }
 
 var dict = {};
-let steps = 4;
+let steps = 50;
 let speed = 0.03;
 let scale = 0.03;
 
 function draw() {
+  setup();
   stroke(0);
   strokeWeight(1);
   background(0);
@@ -35,7 +35,7 @@ function draw() {
       if(dict[j] == undefined) {
         dict[j] = n; } else {
         dict[j] += n; }
-      var x = j; 
+      var x = min(height,width) * (j / width) + (width - min(height,width)) / 2;
       var distance = sqrt(pow(x - width/2, 2) + pow(y - height/2, 2));
       if(distance < min(width, height)/2){
         vertex(x, y);
