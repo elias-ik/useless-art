@@ -9,7 +9,8 @@ function genData1() {
     const dateString = date.toISOString().split("T")[0] + "T00:00:00Z";
     dict[dateString] = 0 + 100 * (i - 1);
   }
-  console.log(dict);
+  var asJson = JSON.stringify(dict);
+  console.log(asJson);
   return dict;
 }
 
@@ -22,7 +23,8 @@ function genData2() {
     const dateString = date.toISOString().split("T")[0] + "T00:00:00Z";
     dict[dateString] = 0 + 100 * (i - 1);
   }
-  console.log(dict);
+  var asJson = JSON.stringify(dict);
+  console.log(asJson);
   return dict;
 }
 
@@ -35,7 +37,8 @@ function genData3() {
     const dateString = date.toISOString().split("T")[0] + "T00:00:00Z";
     dict[dateString] = Math.round(50000 + 10000 * Math.sin(i * 0.1));
   }
-  console.log(dict);
+  var asJson = JSON.stringify(dict);
+  console.log(asJson);
   return dict;
 }
 
@@ -48,7 +51,8 @@ function genData4() {
     const dateString = date.toISOString().split("T")[0] + "T00:00:00Z";
     dict[dateString] = Math.round(100 + 40 * Math.sin(i * 0.1));
   }
-  console.log(dict);
+  var asJson = JSON.stringify(dict);
+  console.log(asJson);
   return dict;
 }
 
@@ -64,7 +68,8 @@ function genData5() {
         dict[dateString] = 0;
     }
   }
-  console.log(dict);
+  var asJson = JSON.stringify(dict);
+  console.log(asJson);
   return dict;
 }
 
@@ -77,7 +82,8 @@ function genData6() {
     const dateString = date.toISOString().split("T")[0] + "T00:00:00Z";
     dict[dateString] = Math.round(1000 + 1000 * Math.sin(i * 3.14/2));
   }
-  console.log(dict);
+  var asJson = JSON.stringify(dict);
+  console.log(asJson);
   return dict;
 }
 
